@@ -7,7 +7,9 @@ export const apiCall = async (
   value: string | null,
   callback: (location: LocationSearchData) => void
 ) => {
-  const respone = await fetch(`/api/${value || 'check'}?access_key=${key}`);
+  const respone = await fetch(`/api/${value || 'check'}?access_key=${key}`, {
+    referrerPolicy: 'unsafe-url',
+  });
 
   const data: LocationApiData = await respone.json();
 
