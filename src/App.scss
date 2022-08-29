@@ -1,0 +1,17 @@
+@import './styles/variables.scss';
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: $mediumBreakPoint) {
+    flex-direction: column;
+    width: 100% !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

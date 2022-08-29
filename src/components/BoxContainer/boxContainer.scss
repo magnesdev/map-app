@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  &--border {
+    border: $border;
+  }
+  @media only screen and (max-width: $mediumBreakPoint) {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.search-history-list {
+  width: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  max-height: 815px;
+  height: 100vh;
+  border: $border;
+  &__item {
+    height: 40px;
+  }
+
+  @media only screen and (max-width: $mediumBreakPoint) {
+    max-height: 400px;
+  }
+}
