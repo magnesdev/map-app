@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { LocationApiData, LocationSearchData } from '../types/types';
 
 const key = process.env.REACT_APP_IPSTACK_API_KEY;
-const url = process.env.REACT_APP_IPSTACK_URL;
 
 export const apiCall = async (
   value: string | null,
