@@ -8,15 +8,17 @@ export const apiCall = async (
   value: string | null,
   callback: (location: LocationSearchData) => void
 ) => {
-  const respone = await fetch(`${url}${value || 'check'}?access_key=${key}`);
+  try {
+    const respone = await fetch(`${url}${value || 'check'}?access_key=${key}`);
 
-  const data: LocationApiData = await respone.json();
-
-  const location: LocationSearchData = {
-    searchInput: value || data.ip,
-    id: uuidv4(),
-    ...data,
-  };
-
-  callback(location);
+    const data: LocationApiData = await respone.json();
+    const location: LocationSearchData = {
+      searchInput: value || data.ip,
+      id: uuidv4(),
+      ...data,
+    };
+    callback(location);
+  } catch (error) {
+    console.log('error', error);
+  }
 };
